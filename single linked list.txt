@@ -1,0 +1,11 @@
+//single linked list 
+void create ();
+void input ();
+void traverse ();
+
+
+//double linked list
+void create ();
+void create ();
+VOID traverse fwd();
+void traverse bwd();

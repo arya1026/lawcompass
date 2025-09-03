@@ -1,0 +1,1208 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Case Database</title>
+  <style>
+    body { font-family: "Georgia", serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; line-height: 1.6; }
+    .container { width: 90%; max-width: 1400px; margin: 40px auto; padding: 25px; background: rgba(255,255,255,0.95); border-radius: 14px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+    h1 { text-align: center; margin-bottom: 20px; font-size: 2.4rem; color: #222; }
+    .cases { display: flex; flex-wrap: wrap; gap: 20px; }
+    .case { flex: 1 1 calc(50% - 20px); background: #fafafa; padding: 20px; border-left: 5px solid #c0a060; border-radius: 10px; }
+    .case h2 { font-size: 1.2rem; margin-bottom: 10px; color: #444; }
+    .label { font-weight: bold; color: #555; }
+
+    /* Search bar styles */
+    .search-container {
+      margin: 20px auto 40px auto;
+      padding: 20px;
+      max-width: 1200px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .search-container select,
+    .search-container input {
+      padding: 12px 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .continent, .country { flex: 0 0 180px; }
+    .category { flex: 0 0 140px; }
+    .search-input { flex: 1; min-width: 280px; }
+    .search-container button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #007bff;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .search-container button:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <h1>🌍 Global Case Database</h1>
+
+    <!-- ✅ Search Bar -->
+    <div class="search-container">
+      <select class="continent" id="continent">
+        <option value="">Select Continent</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="North America">North America</option>
+        <option value="South America">South America</option>
+        <option value="Africa">Africa</option>
+        <option value="Oceania">Oceania</option>
+      </select>
+
+      <select class="country" id="country">
+        <option value="">Select Country</option>
+      </select>
+
+      <select class="category" id="category">
+        <option value="">Select Category</option>
+        <option>Civil Law</option>
+        <option>Criminal Law</option>
+        <option>Family Law</option>
+      </select>
+
+      <input type="text" placeholder="Search by case name, year, section, or article..." class="search-input" id="searchInput">
+
+      <button onclick="filterCases()">Search</button>
+    </div>
+
+    <!-- ✅ Sample Cases -->
+    <div class="cases" id="casesList">
+      
+      <!-- Asia -->
+      
+
+
+      <!-- Afghanistan -->
+      <div class="case">
+        <h2>Afghanistan – Farkhunda Malikzada Case (2015)</h2>
+        <p><span class="label">Year:</span> 2015</p>
+        <p><span class="label">Victim:</span> Farkhunda Malikzada</p>
+        <p><span class="label">Issue:</span> Mob lynching over false blasphemy accusation.</p>
+        <p><span class="label">Resolution:</span> Several perpetrators convicted; some sentences later reduced.</p>
+        <p><span class="label">Outcome:</span> Sparked national debate on women's rights and justice reform.</p>
+      </div>
+
+      <div class="case">
+        <h2>Afghanistan – Kabul Serial Killings Case (2018)</h2>
+        <p><span class="label">Year:</span> 2018</p>
+        <p><span class="label">Victim:</span> Multiple civilians</p>
+        <p><span class="label">Issue:</span> Targeted killings by extremist groups.</p>
+        <p><span class="label">Resolution:</span> Key suspects arrested and tried under anti-terror laws.</p>
+        <p><span class="label">Outcome:</span> Strengthened counterterrorism legal framework.</p>
+      </div>
+
+      <div class="case">
+        <h2>Afghanistan – Mazar-e-Sharif Rape Case (2016)</h2>
+        <p><span class="label">Year:</span> 2016</p>
+        <p><span class="label">Victim:</span> Teenage girl</p>
+        <p><span class="label">Issue:</span> Gang rape by local officials.</p>
+        <p><span class="label">Resolution:</span> Convictions secured despite political pressure.</p>
+        <p><span class="label">Outcome:</span> Raised awareness of abuse by authorities.</p>
+      </div>
+
+      <div class="case">
+        <h2>Afghanistan – Jalalabad Acid Attack Case (2014)</h2>
+        <p><span class="label">Year:</span> 2014</p>
+        <p><span class="label">Victim:</span> Schoolgirls</p>
+        <p><span class="label">Issue:</span> Acid attack targeting female education.</p>
+        <p><span class="label">Resolution:</span> Attackers sentenced under anti-terror laws.</p>
+        <p><span class="label">Outcome:</span> Prompted protective measures for female students.</p>
+      </div>
+
+      <div class="case">
+        <h2>Afghanistan – Herat Honor Killing Case (2017)</h2>
+        <p><span class="label">Year:</span> 2017</p>
+        <p><span class="label">Victim:</span> Young woman</p>
+        <p><span class="label">Issue:</span> Murder by family over alleged dishonor.</p>
+        <p><span class="label">Resolution:</span> Family members convicted.</p>
+        <p><span class="label">Outcome:</span> Challenged cultural norms around honor killings.</p>
+      </div>
+
+      <!-- Bangladesh -->
+      <div class="case">
+        <h2>Bangladesh – Nusrat Jahan Rafi Case (2019)</h2>
+        <p><span class="label">Year:</span> 2019</p>
+        <p><span class="label">Victim:</span> Nusrat Jahan Rafi</p>
+        <p><span class="label">Issue:</span> Murder after reporting sexual harassment.</p>
+        <p><span class="label">Resolution:</span> 16 people sentenced to death.</p>
+        <p><span class="label">Outcome:</span> Strengthened laws against harassment and violence.</p>
+      </div>
+
+      <div class="case">
+        <h2>Bangladesh – Holey Artisan Bakery Attack Case (2016)</h2>
+        <p><span class="label">Year:</span> 2016</p>
+        <p><span class="label">Victim:</span> 22 civilians</p>
+        <p><span class="label">Issue:</span> Terrorist attack in Dhaka.</p>
+        <p><span class="label">Resolution:</span> 7 militants sentenced to death.</p>
+        <p><span class="label">Outcome:</span> Boosted counterterrorism efforts.</p>
+      </div>
+
+      <div class="case">
+        <h2>Bangladesh – Shahbagh Protest Case (2013)</h2>
+        <p><span class="label">Year:</span> 2013</p>
+        <p><span class="label">Victim:</span> War crimes victims</p>
+        <p><span class="label">Issue:</span> Demand for capital punishment for war criminals.</p>
+        <p><span class="label">Resolution:</span> Tribunal revised sentences.</p>
+        <p><span class="label">Outcome:</span> Influenced war crimes jurisprudence.</p>
+      </div>
+
+      <div class="case">
+        <h2>Bangladesh – Kalpana Chakma Case (1996)</h2>
+        <p><span class="label">Year:</span> 1996</p>
+        <p><span class="label">Victim:</span> Kalpana Chakma</p>
+        <p><span class="label">Issue:</span> Abduction by security forces.</p>
+        <p><span class="label">Resolution:</span> Case remains unresolved.</p>
+        <p><span class="label">Outcome:</span> Raised concerns over impunity.</p>
+      </div>
+
+      <div class="case">
+        <h2>Bangladesh – Tazreen Factory Fire Case (2012)</h2>
+        <p><span class="label">Year:</span> 2012</p>
+        <p><span class="label">Victim:</span> 112 workers</p>
+        <p><span class="label">Issue:</span> Negligence leading to mass death.</p>
+        <p><span class="label">Resolution:</span> Factory owners charged.</p>
+        <p><span class="label">Outcome:</span> Pushed for labor law reforms.</p>
+      </div>
+
+      <!-- Bhutan -->
+      <div class="case">
+        <h2>Bhutan – Wangdue Phodrang Murder Case (2015)</h2>
+        <p><span class="label">Year:</span> 2015</p>
+        <p><span class="label">Victim:</span> Local businessman</p>
+        <p><span class="label">Issue:</span> Murder over land dispute.</p>
+        <p><span class="label">Resolution:</span> Perpetrator sentenced to life imprisonment.</p>
+        <p><span class="label">Outcome:</span> Reinforced property rights enforcement.</p>
+      </div>
+
+      <!-- More countries continue below... -->
+       <!-- ======= PART A–C: Afghanistan, Bangladesh, Bhutan, Brunei, Cambodia, China =======
+     Copy-paste this block exactly into your existing <div class="cases"> area
+     (or paste each country's block where you want it). Each case title begins
+     with the country name so a simple text search for "India" / "Afghanistan"
+     etc. will return all cases for that country. -->
+     
+<!-- ===================== Afghanistan ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Afghanistan</h2>
+<div class="case">
+  <h2>Afghanistan – Ahmad Shah Massoud Assassination (2001)</h2>
+  <p><span class="label">Year:</span> 2001</p>
+  <p><span class="label">Victim:</span> Ahmad Shah Massoud</p>
+  <p><span class="label">Issue:</span> Targeted killing of anti-Taliban commander by suicide attackers.</p>
+  <p><span class="label">Resolution:</span> Attack claimed to be linked to international terrorism; investigations by Afghan authorities and international observers.</p>
+  <p><span class="label">Outcome:</span> Political shock preceding 9/11; increased international focus on Afghan security and leadership vacuum.</p>
+</div>
+
+<div class="case">
+  <h2>Afghanistan – Taliban Summary Executions & Detentions (1996–2001)</h2>
+  <p><span class="label">Year:</span> 1996–2001</p>
+  <p><span class="label">Victim:</span> Civilians, minorities and dissenters</p>
+  <p><span class="label">Issue:</span> Reported summary executions, restrictions and extrajudicial detentions under Taliban rule.</p>
+  <p><span class="label">Resolution:</span> Documented by human-rights organizations; no domestic judicial remedy under Taliban at that time.</p>
+  <p><span class="label">Outcome:</span> International condemnation and later transitional justice debates following regime changes.</p>
+</div>
+
+<div class="case">
+  <h2>Afghanistan – Farkhunda Mob Killing (2015)</h2>
+  <p><span class="label">Year:</span> 2015</p>
+  <p><span class="label">Victim:</span> Farkhunda Malikzada</p>
+  <p><span class="label">Issue:</span> False accusation sparked mob lynching in Kabul.</p>
+  <p><span class="label">Resolution:</span> Several perpetrators convicted; some sentences later revised on appeal amid controversy.</p>
+  <p><span class="label">Outcome:</span> Public outrage, calls for better rule-of-law protections and police accountability.</p>
+</div>
+
+<div class="case">
+  <h2>Afghanistan – Assassination of Burhanuddin Rabbani (2011)</h2>
+  <p><span class="label">Year:</span> 2011</p>
+  <p><span class="label">Victim:</span> Burhanuddin Rabbani (former president / peace negotiator)</p>
+  <p><span class="label">Issue:</span> Suicide bomber attack inside Rabbani's home during peace talks.</p>
+  <p><span class="label">Resolution:</span> Attack widely condemned; investigations indicated militant responsibility.</p>
+  <p><span class="label">Outcome:</span> Setback for peace processes and heightened security concerns in negotiations.</p>
+</div>
+
+<div class="case">
+  <h2>Afghanistan – Crimes During Insurgency (1990s–2020s)</h2>
+  <p><span class="label">Year:</span> 1990s–2020s</p>
+  <p><span class="label">Victim:</span> Civilians across regions</p>
+  <p><span class="label">Issue:</span> Alleged war crimes, attacks on civilians and forced displacement during prolonged conflict.</p>
+  <p><span class="label">Resolution:</span> Documentation by human-rights bodies; limited domestic prosecutions.</p>
+  <p><span class="label">Outcome:</span> International calls for accountability and humanitarian attention.</p>
+</div>
+
+<!-- ===================== Bangladesh ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Bangladesh</h2>
+<div class="case">
+  <h2>Bangladesh – 1971 War Crimes Trials (International Crimes Tribunal) (2009–)</h2>
+  <p><span class="label">Year:</span> 1971 (trials 2009 onward)</p>
+  <p><span class="label">Victim:</span> Millions of war victims and survivors</p>
+  <p><span class="label">Issue:</span> Atrocities and crimes during the 1971 Liberation War.</p>
+  <p><span class="label">Resolution:</span> Domestic tribunal set up; several convictions and sentences issued.</p>
+  <p><span class="label">Outcome:</span> Controversial but important for national accountability and public closure debates.</p>
+</div>
+
+<div class="case">
+  <h2>Bangladesh – Shahbagh Movement & War Crimes Accountability (2013)</h2>
+  <p><span class="label">Year:</span> 2013</p>
+  <p><span class="label">Victim:</span> Public demand for justice</p>
+  <p><span class="label">Issue:</span> Public protest movement demanding stricter punishment for convicted war criminals.</p>
+  <p><span class="label">Resolution:</span> Spurred active prosecutions and parliamentary attention.</p>
+  <p><span class="label">Outcome:</span> Heightened public engagement with transitional justice processes.</p>
+</div>
+
+<div class="case">
+  <h2>Bangladesh – Narayanganj Seven Murder Case (2014)</h2>
+  <p><span class="label">Year:</span> 2014</p>
+  <p><span class="label">Victim:</span> Seven people, including a city official</p>
+  <p><span class="label">Issue:</span> Abductions and murders allegedly carried out by police units and local gang members.</p>
+  <p><span class="label">Resolution:</span> Trials led to convictions of several suspects, including police officers.</p>
+  <p><span class="label">Outcome:</span> Exposed issues of extrajudicial actions and policing reform demands.</p>
+</div>
+
+<div class="case">
+  <h2>Bangladesh – Rana Plaza Collapse (2013)</h2>
+  <p><span class="label">Year:</span> 2013</p>
+  <p><span class="label">Victim:</span> Over 1,100 garment workers</p>
+  <p><span class="label">Issue:</span> Industrial negligence and building collapse causing mass deaths.</p>
+  <p><span class="label">Resolution:</span> Criminal negligence cases filed; some factory owners and officials prosecuted.</p>
+  <p><span class="label">Outcome:</span> Major reforms and global scrutiny of garment safety and corporate accountability.</p>
+</div>
+
+<div class="case">
+  <h2>Bangladesh – Murder of Avijit Roy and Attacks on Bloggers (2015 onward)</h2>
+  <p><span class="label">Year:</span> 2015 onwards</p>
+  <p><span class="label">Victim:</span> Secular writers and bloggers (e.g., Avijit Roy)</p>
+  <p><span class="label">Issue:</span> Stabbings and targeted killings of secular activists by extremist actors.</p>
+  <p><span class="label">Resolution:</span> Arrests and international investigations in several cases.</p>
+  <p><span class="label">Outcome:</span> Spotlight on freedom of expression and need for protection of dissenting voices.</p>
+</div>
+
+<!-- ===================== Bhutan ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Bhutan</h2>
+<div class="case">
+  <h2>Bhutan – Lhotshampa Ethnic Tension & Displacement (1990s)</h2>
+  <p><span class="label">Year:</span> 1990s</p>
+  <p><span class="label">Victim:</span> Lhotshampa (ethnic Nepali community)</p>
+  <p><span class="label">Issue:</span> Policies and events causing displacement and alleged abuses.</p>
+  <p><span class="label">Resolution:</span> Many displaced persons sought refuge abroad; limited domestic legal redress.</p>
+  <p><span class="label">Outcome:</span> Continued international attention on rights and refugee issues.</p>
+</div>
+
+<div class="case">
+  <h2>Bhutan – Crown Prince Assassination Attempt (Assorted Security Incidents)</h2>
+  <p><span class="label">Year:</span> Various</p>
+  <p><span class="label">Victim:</span> Royal family members / officials (reported incidents)</p>
+  <p><span class="label">Issue:</span> Isolated violent incidents and security threats.</p>
+  <p><span class="label">Resolution:</span> Security responses; few large-scale public criminal trials.</p>
+  <p><span class="label">Outcome:</span> Strengthened internal security measures and low public crime rate maintenance.</p>
+</div>
+
+<div class="case">
+  <h2>Bhutan – Drug Trafficking & Cross-border Crime Cases (2000s–2020s)</h2>
+  <p><span class="label">Year:</span> 2000s–2020s</p>
+  <p><span class="label">Victim:</span> Communities affected by trafficking</p>
+  <p><span class="label">Issue:</span> Organized trafficking and related criminal activity in border regions.</p>
+  <p><span class="label">Resolution:</span> Arrests and prosecutions under national law.</p>
+  <p><span class="label">Outcome:</span> Regional cooperation and law-enforcement strengthening.</p>
+</div>
+
+<div class="case">
+  <h2>Bhutan – High-profile Corruption & Administrative Cases (various)</h2>
+  <p><span class="label">Year:</span> Various</p>
+  <p><span class="label">Victim:</span> Public interest</p>
+  <p><span class="label">Issue:</span> Alleged misuse of office and administrative corruption.</p>
+  <p><span class="label">Resolution:</span> Investigations and administrative/legal follow-up.</p>
+  <p><span class="label">Outcome:</span> Calls for transparency and institutional reforms.</p>
+</div>
+
+<div class="case">
+  <h2>Bhutan – Cases Involving Protected Traditional Rights & Law Enforcement</h2>
+  <p><span class="label">Year:</span> Various</p>
+  <p><span class="label">Victim:</span> Local communities</p>
+  <p><span class="label">Issue:</span> Disputes over land, traditional rights, and enforcement actions.</p>
+  <p><span class="label">Resolution:</span> Administrative/legal resolution in local courts.</p>
+  <p><span class="label">Outcome:</span> Strengthening of local dispute resolution and policy clarity.</p>
+</div>
+
+<!-- ===================== Brunei ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Brunei</h2>
+<div class="case">
+  <h2>Brunei – Introduction of Sharia Penal Code (2014–2019)</h2>
+  <p><span class="label">Year:</span> 2014–2019</p>
+  <p><span class="label">Victim:</span> Affected communities and potential defendants</p>
+  <p><span class="label">Issue:</span> Adoption of Sharia-based criminal provisions including corporal punishment provisions.</p>
+  <p><span class="label">Resolution:</span> Phased implementation; international concern and later amendments/clarifications.</p>
+  <p><span class="label">Outcome:</span> Global human-rights attention and domestic legal adjustments.</p>
+</div>
+
+<div class="case">
+  <h2>Brunei – Enforcement of Religious-Related Offences (various)</h2>
+  <p><span class="label">Year:</span> Various</p>
+  <p><span class="label">Victim:</span> Alleged offenders</p>
+  <p><span class="label">Issue:</span> Prosecutions under religious and public-order statutes.</p>
+  <p><span class="label">Resolution:</span> Cases handled under domestic courts in line with national legislation.</p>
+  <p><span class="label">Outcome:</span> Emphasis on religious law in domestic legal framework and international commentary.</p>
+</div>
+
+<div class="case">
+  <h2>Brunei – White-collar & Corruption Investigations (selected cases)</h2>
+  <p><span class="label">Year:</span> 2000s–2020s</p>
+  <p><span class="label">Victim:</span> Public sector / economy</p>
+  <p><span class="label">Issue:</span> Allegations of financial misconduct and misuse of public funds.</p>
+  <p><span class="label">Resolution:</span> Investigations and prosecutions where evidence supported charges.</p>
+  <p><span class="label">Outcome:</span> Strengthened governance and anti-corruption measures.</p>
+</div>
+
+<div class="case">
+  <h2>Brunei – Transnational Crime & Trafficking Cases</h2>
+  <p><span class="label">Year:</span> 2010s–2020s</p>
+  <p><span class="label">Victim:</span> Trafficking victims</p>
+  <p><span class="label">Issue:</span> Human trafficking and cross-border criminal networks.</p>
+  <p><span class="label">Resolution:</span> Arrests and regional cooperation in prosecutions.</p>
+  <p><span class="label">Outcome:</span> Strengthened international cooperation on trafficking issues.</p>
+</div>
+
+<!-- ===================== Cambodia ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Cambodia</h2>
+<div class="case">
+  <h2>Cambodia – Tuol Sleng (S-21) & Khmer Rouge Atrocities (1975–1979)</h2>
+  <p><span class="label">Year:</span> 1975–1979 (trials later)</p>
+  <p><span class="label">Victim:</span> Tens of thousands (S-21 detainees)</p>
+  <p><span class="label">Issue:</span> Mass detention, torture and executions under Khmer Rouge regime.</p>
+  <p><span class="label">Resolution:</span> Extraordinary Chambers (ECCC) set up; prosecutions of senior Khmer Rouge figures.</p>
+  <p><span class="label">Outcome:</span> Historic accountability, reparations debates and historical record establishment.</p>
+</div>
+
+<div class="case">
+  <h2>Cambodia – Duch (Kaing Guek Eav) Conviction (ECCC) (2010)</h2>
+  <p><span class="label">Year:</span> 2010</p>
+  <p><span class="label">Victim:</span> Prisoners of S-21</p>
+  <p><span class="label">Issue:</span> Command responsibility for detention center atrocities.</p>
+  <p><span class="label">Resolution:</span> Conviction and life sentence for Duch by ECCC.</p>
+  <p><span class="label">Outcome:</span> Important milestone in transitional justice for Cambodia.</p>
+</div>
+
+<div class="case">
+  <h2>Cambodia – Khmer Rouge Senior Leadership Trials (2000s–2010s)</h2>
+  <p><span class="label">Year:</span> 2000s–2010s</p>
+  <p><span class="label">Victim:</span> Victims of regime-wide atrocities</p>
+  <p><span class="label">Issue:</span> Criminal responsibility of senior leaders for mass crimes.</p>
+  <p><span class="label">Resolution:</span> Trials, convictions, and some acquittals under ECCC.</p>
+  <p><span class="label">Outcome:</span> Continued public debate on justice, reparations and national reconciliation.</p>
+</div>
+
+<div class="case">
+  <h2>Cambodia – Land Grabs & Violence Against Activists (recent decades)</h2>
+  <p><span class="label">Year:</span> 2000s–2020s</p>
+  <p><span class="label">Victim:</span> Farmers and land-rights activists</p>
+  <p><span class="label">Issue:</span> Violent evictions and criminal complaints related to land disputes.</p>
+  <p><span class="label">Resolution:</span> Legal actions, mixed outcomes and international monitoring.</p>
+  <p><span class="label">Outcome:</span> Human-rights attention and calls for rule-of-law protections.</p>
+</div>
+
+<div class="case">
+  <h2>Cambodia – Political Violence & High-profile Killings (various)</h2>
+  <p><span class="label">Year:</span> 1990s–2010s</p>
+  <p><span class="label">Victim:</span> Journalists, political figures</p>
+  <p><span class="label">Issue:</span> Alleged politically linked killings and attacks.</p>
+  <p><span class="label">Resolution:</span> Investigations and trials with contested findings.</p>
+  <p><span class="label">Outcome:</span> International scrutiny and debates over access to justice.</p>
+</div>
+
+<!-- ===================== China ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">China</h2>
+<div class="case">
+  <h2>China – Liu Xiaobo Conviction (2009)</h2>
+  <p><span class="label">Year:</span> 2009</p>
+  <p><span class="label">Victim:</span> Liu Xiaobo (dissident)</p>
+  <p><span class="label">Issue:</span> Convicted of "inciting subversion" after pro-democracy activism.</p>
+  <p><span class="label">Resolution:</span> Sentenced to 11 years imprisonment.</p>
+  <p><span class="label">Outcome:</span> International criticism and attention to free-speech issues.</p>
+</div>
+
+<div class="case">
+  <h2>China – Bo Xilai Scandal & Related Trials (2012)</h2>
+  <p><span class="label">Year:</span> 2012</p>
+  <p><span class="label">Victim:</span> Various (including family members and associates)</p>
+  <p><span class="label">Issue:</span> Corruption and murder allegations within political elite circles.</p>
+  <p><span class="label">Resolution:</span> Trials and convictions of Bo Xilai's associates; Bo Xilai convicted of corruption.</p>
+  <p><span class="label">Outcome:</span> Major political shake-up and anti-corruption emphasis.</p>
+</div>
+
+<div class="case">
+  <h2>China – Sun Zhigang Custodial Death Case (2003)</h2>
+  <p><span class="label">Year:</span> 2003</p>
+  <p><span class="label">Victim:</span> Sun Zhigang</p>
+  <p><span class="label">Issue:</span> Death in custody after detention under vagrancy rules.</p>
+  <p><span class="label">Resolution:</span> Public outcry led to abolition/reform of "custody and repatriation" administrative system.</p>
+  <p><span class="label">Outcome:</span> Administrative detention reforms and greater public scrutiny of custodial deaths.</p>
+</div>
+
+<div class="case">
+  <h2>China – Gao Zhisheng & Human-Rights Lawyer Cases (2000s)</h2>
+  <p><span class="label">Year:</span> 2000s</p>
+  <p><span class="label">Victim:</span> Human-rights lawyers and activists</p>
+  <p><span class="label">Issue:</span> Harassment, detention and alleged torture tied to activism.</p>
+  <p><span class="label">Resolution:</span> International advocacy; some releases, many concerns remain.</p>
+  <p><span class="label">Outcome:</span> Heightened international attention on lawyer protections and rights of defenders.</p>
+</div>
+
+<div class="case">
+  <h2>China – Nanchang Bus Arson Case (2013)</h2>
+  <p><span class="label">Year:</span> 2013</p>
+  <p><span class="label">Victim:</span> Civilians</p>
+  <p><span class="label">Issue:</span> Violent public attack causing deaths and injuries.</p>
+  <p><span class="label">Resolution:</span> Arrests and prosecution under criminal law.</p>
+  <p><span class="label">Outcome:</span> Focus on public security measures and emergency responses.</p>
+</div>
+
+<!-- ======= END of A–C block ======= -->
+ <!-- ======= PART D–I: India, Indonesia, Iran, Iraq, Israel =======
+     Copy-paste this block exactly into your existing <div class="cases"> area
+     under the previous block. -->
+
+<!-- ===================== India ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">India</h2>
+<div class="case">
+  <h2>India – Kesavananda Bharati v. State of Kerala (1973)</h2>
+  <p><span class="label">Year:</span> 1973</p>
+  <p><span class="label">Victim:</span> Religious institution</p>
+  <p><span class="label">Issue:</span> Extent of Parliament’s power to amend the Constitution.</p>
+  <p><span class="label">Resolution:</span> Court upheld basic structure doctrine limiting amendment power.</p>
+  <p><span class="label">Outcome:</span> Landmark precedent shaping constitutional law in India.</p>
+</div>
+
+<div class="case">
+  <h2>India – Indira Gandhi v. Raj Narain (1975)</h2>
+  <p><span class="label">Year:</span> 1975</p>
+  <p><span class="label">Victim:</span> Democratic process</p>
+  <p><span class="label">Issue:</span> Validity of Prime Minister’s election challenged on grounds of malpractice.</p>
+  <p><span class="label">Resolution:</span> Allahabad High Court set aside election; later appeal.</p>
+  <p><span class="label">Outcome:</span> Led to Emergency declaration in India.</p>
+</div>
+
+<div class="case">
+  <h2>India – Bachan Singh v. State of Punjab (1980)</h2>
+  <p><span class="label">Year:</span> 1980</p>
+  <p><span class="label">Victim:</span> Criminal accused in death penalty cases</p>
+  <p><span class="label">Issue:</span> Constitutionality of the death penalty under Indian law.</p>
+  <p><span class="label">Resolution:</span> Death penalty upheld but restricted to “rarest of rare” cases.</p>
+  <p><span class="label">Outcome:</span> Guiding principle for sentencing in capital punishment cases.</p>
+</div>
+
+<div class="case">
+  <h2>India – Vishaka v. State of Rajasthan (1997)</h2>
+  <p><span class="label">Year:</span> 1997</p>
+  <p><span class="label">Victim:</span> Women employees</p>
+  <p><span class="label">Issue:</span> Absence of laws against workplace sexual harassment.</p>
+  <p><span class="label">Resolution:</span> Court laid down Vishaka Guidelines until legislation was enacted.</p>
+  <p><span class="label">Outcome:</span> Basis for Sexual Harassment of Women at Workplace Act, 2013.</p>
+</div>
+
+<div class="case">
+  <h2>India – Nirbhaya Gang Rape Case (2012)</h2>
+  <p><span class="label">Year:</span> 2012</p>
+  <p><span class="label">Victim:</span> Jyoti Singh (Nirbhaya)</p>
+  <p><span class="label">Issue:</span> Brutal gang rape and murder on a Delhi bus.</p>
+  <p><span class="label">Resolution:</span> Fast-track trial led to convictions and death sentences for main accused.</p>
+  <p><span class="label">Outcome:</span> Led to major legal reforms in sexual assault laws and public awareness.</p>
+</div>
+
+<!-- ===================== Indonesia ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Indonesia</h2>
+<div class="case">
+  <h2>Indonesia – Bali Bombings Trial (2002)</h2>
+  <p><span class="label">Year:</span> 2002</p>
+  <p><span class="label">Victim:</span> 200+ civilians</p>
+  <p><span class="label">Issue:</span> Terrorist bombings in Bali targeting nightclubs.</p>
+  <p><span class="label">Resolution:</span> Perpetrators arrested, tried, and sentenced to death or long prison terms.</p>
+  <p><span class="label">Outcome:</span> Stronger anti-terror laws and regional cooperation.</p>
+</div>
+
+<div class="case">
+  <h2>Indonesia – Munir Said Thalib Murder (2004)</h2>
+  <p><span class="label">Year:</span> 2004</p>
+  <p><span class="label">Victim:</span> Munir Said Thalib (human-rights activist)</p>
+  <p><span class="label">Issue:</span> Poisoning of prominent activist on flight.</p>
+  <p><span class="label">Resolution:</span> Several suspects tried and convicted; controversy about masterminds.</p>
+  <p><span class="label">Outcome:</span> Increased debate on state accountability.</p>
+</div>
+
+<div class="case">
+  <h2>Indonesia – Jakarta May Riots (1998)</h2>
+  <p><span class="label">Year:</span> 1998</p>
+  <p><span class="label">Victim:</span> Civilians (esp. Chinese-Indonesians)</p>
+  <p><span class="label">Issue:</span> Widespread rioting and violence amid political turmoil.</p>
+  <p><span class="label">Resolution:</span> Investigations; limited accountability for perpetrators.</p>
+  <p><span class="label">Outcome:</span> Highlighted human-rights issues and sparked reform debates.</p>
+</div>
+
+<div class="case">
+  <h2>Indonesia – Ahok Blasphemy Case (2017)</h2>
+  <p><span class="label">Year:</span> 2017</p>
+  <p><span class="label">Victim:</span> Basuki Tjahaja Purnama (Ahok)</p>
+  <p><span class="label">Issue:</span> Former Jakarta governor convicted for alleged blasphemy.</p>
+  <p><span class="label">Resolution:</span> Sentenced to prison.</p>
+  <p><span class="label">Outcome:</span> Sparked debates on religious freedom and legal reform.</p>
+</div>
+
+<div class="case">
+  <h2>Indonesia – Corruption Eradication Commission (KPK) Cases</h2>
+  <p><span class="label">Year:</span> 2000s–2020s</p>
+  <p><span class="label">Victim:</span> Public interest</p>
+  <p><span class="label">Issue:</span> High-level corruption cases investigated and prosecuted by KPK.</p>
+  <p><span class="label">Resolution:</span> Convictions of politicians and officials.</p>
+  <p><span class="label">Outcome:</span> Strengthened anti-corruption framework.</p>
+</div>
+
+<!-- ===================== Iran ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Iran</h2>
+<div class="case">
+  <h2>Iran – Zahra Kazemi Case (2003)</h2>
+  <p><span class="label">Year:</span> 2003</p>
+  <p><span class="label">Victim:</span> Zahra Kazemi (photojournalist)</p>
+  <p><span class="label">Issue:</span> Death in custody under suspicious circumstances.</p>
+  <p><span class="label">Resolution:</span> Limited trial; international protest over lack of accountability.</p>
+  <p><span class="label">Outcome:</span> Continued scrutiny of prison conditions in Iran.</p>
+</div>
+
+<div class="case">
+  <h2>Iran – Chain Murders of Intellectuals (1998)</h2>
+  <p><span class="label">Year:</span> 1998</p>
+  <p><span class="label">Victim:</span> Dissident writers and activists</p>
+  <p><span class="label">Issue:</span> Targeted killings of intellectuals.</p>
+  <p><span class="label">Resolution:</span> Trials of some intelligence officials; limited transparency.</p>
+  <p><span class="label">Outcome:</span> Human-rights concerns and distrust in official investigations.</p>
+</div>
+
+<div class="case">
+  <h2>Iran – Mahsa Amini Protests (2022)</h2>
+  <p><span class="label">Year:</span> 2022</p>
+  <p><span class="label">Victim:</span> Mahsa Amini</p>
+  <p><span class="label">Issue:</span> Death after detention by morality police for dress-code violation.</p>
+  <p><span class="label">Resolution:</span> Widespread protests; global condemnation; ongoing trials of protesters.</p>
+  <p><span class="label">Outcome:</span> Sparked debate on women’s rights and state accountability.</p>
+</div>
+
+<div class="case">
+  <h2>Iran – Bahrami Acid Attacks Case (2011)</h2>
+  <p><span class="label">Year:</span> 2011</p>
+  <p><span class="label">Victim:</span> Ameneh Bahrami</p>
+  <p><span class="label">Issue:</span> Victim blinded in acid attack.</p>
+  <p><span class="label">Resolution:</span> Court allowed victim to demand qisas (retributive justice) but she pardoned attacker.</p>
+  <p><span class="label">Outcome:</span> Case highlighted Iran’s criminal law provisions and mercy in sentencing.</p>
+</div>
+
+<div class="case">
+  <h2>Iran – 2009 Post-election Protests & Trials</h2>
+  <p><span class="label">Year:</span> 2009</p>
+  <p><span class="label">Victim:</span> Protesters and detainees</p>
+  <p><span class="label">Issue:</span> Mass arrests and alleged abuses following disputed elections.</p>
+  <p><span class="label">Resolution:</span> Public trials, some convictions, but criticized for unfair process.</p>
+  <p><span class="label">Outcome:</span> Ongoing international human-rights concerns.</p>
+</div>
+
+<!-- ===================== Iraq ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Iraq</h2>
+<div class="case">
+  <h2>Iraq – Saddam Hussein Trial (2005–2006)</h2>
+  <p><span class="label">Year:</span> 2005–2006</p>
+  <p><span class="label">Victim:</span> Civilians in Dujail massacre</p>
+  <p><span class="label">Issue:</span> Crimes against humanity.</p>
+  <p><span class="label">Resolution:</span> Saddam convicted and sentenced to death.</p>
+  <p><span class="label">Outcome:</span> Symbolic accountability, but controversy over fairness.</p>
+</div>
+
+<div class="case">
+  <h2>Iraq – Anfal Campaign Prosecutions (2007)</h2>
+  <p><span class="label">Year:</span> 2007</p>
+  <p><span class="label">Victim:</span> Kurdish civilians</p>
+  <p><span class="label">Issue:</span> Mass killings and chemical attacks under Ba’athist regime.</p>
+  <p><span class="label">Resolution:</span> Several officials convicted by Iraqi High Tribunal.</p>
+  <p><span class="label">Outcome:</span> Recognition of atrocities as crimes against humanity.</p>
+</div>
+
+<div class="case">
+  <h2>Iraq – Nisour Square Massacre (2007)</h2>
+  <p><span class="label">Year:</span> 2007</p>
+  <p><span class="label">Victim:</span> 17 Iraqi civilians</p>
+  <p><span class="label">Issue:</span> Shooting by private military contractors.</p>
+  <p><span class="label">Resolution:</span> Trials held in US; convictions and later pardons.</p>
+  <p><span class="label">Outcome:</span> Debate on accountability of private contractors.</p>
+</div>
+
+<div class="case">
+  <h2>Iraq – Al-Qaeda in Iraq Terror Trials (2000s)</h2>
+  <p><span class="label">Year:</span> 2000s</p>
+  <p><span class="label">Victim:</span> Civilians</p>
+  <p><span class="label">Issue:</span> Terror attacks and bombings.</p>
+  <p><span class="label">Resolution:</span> Arrests and prosecutions under Iraqi criminal courts.</p>
+  <p><span class="label">Outcome:</span> Reinforced anti-terrorism legal framework.</p>
+</div>
+
+<div class="case">
+  <h2>Iraq – Corruption Prosecutions (2010s)</h2>
+  <p><span class="label">Year:</span> 2010s</p>
+  <p><span class="label">Victim:</span> Public trust</p>
+  <p><span class="label">Issue:</span> Large-scale corruption in government contracts.</p>
+  <p><span class="label">Resolution:</span> Some trials and convictions; many unresolved.</p>
+  <p><span class="label">Outcome:</span> Continued political instability linked to corruption.</p>
+</div>
+
+<!-- ===================== Israel ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Israel</h2>
+<div class="case">
+  <h2>Israel – Adolf Eichmann Trial (1961)</h2>
+  <p><span class="label">Year:</span> 1961</p>
+  <p><span class="label">Victim:</span> Holocaust survivors and Jewish people</p>
+  <p><span class="label">Issue:</span> Crimes against humanity and war crimes during WWII.</p>
+  <p><span class="label">Resolution:</span> Eichmann tried, convicted, and executed.</p>
+  <p><span class="label">Outcome:</span> Landmark in international criminal justice.</p>
+</div>
+
+<div class="case">
+  <h2>Israel – Kastner Trial (1954–1958)</h2>
+  <p><span class="label">Year:</span> 1954–1958</p>
+  <p><span class="label">Victim:</span> Rudolf Kastner’s reputation</p>
+  <p><span class="label">Issue:</span> Accusations of collaboration with Nazis during Holocaust.</p>
+  <p><span class="label">Resolution:</span> Supreme Court overturned most accusations before Kastner’s assassination.</p>
+  <p><span class="label">Outcome:</span> Influential case on defamation and Holocaust memory.</p>
+</div>
+
+<div class="case">
+  <h2>Israel – Yigal Amir Trial (1995)</h2>
+  <p><span class="label">Year:</span> 1995</p>
+  <p><span class="label">Victim:</span> Prime Minister Yitzhak Rabin</p>
+  <p><span class="label">Issue:</span> Assassination of sitting Prime Minister.</p>
+  <p><span class="label">Resolution:</span> Amir convicted and sentenced to life imprisonment.</p>
+  <p><span class="label">Outcome:</span> Political shock, peace process setback.</p>
+</div>
+
+<div class="case">
+  <h2>Israel – Holyland Case (2010–2014)</h2>
+  <p><span class="label">Year:</span> 2010–2014</p>
+  <p><span class="label">Victim:</span> Public interest</p>
+  <p><span class="label">Issue:</span> Corruption scandal involving former Prime Minister Ehud Olmert.</p>
+  <p><span class="label">Resolution:</span> Olmert convicted and imprisoned.</p>
+  <p><span class="label">Outcome:</span> First Israeli PM imprisoned; strong anti-corruption precedent.</p>
+</div>
+
+<div class="case">
+  <h2>Israel – Azaria Shooting Case (2016)</h2>
+  <p><span class="label">Year:</span> 2016</p>
+  <p><span class="label">Victim:</span> Palestinian attacker (already neutralized)</p>
+  <p><span class="label">Issue:</span> Israeli soldier Elor Azaria shot subdued attacker.</p>
+  <p><span class="label">Resolution:</span> Convicted of manslaughter; served reduced sentence.</p>
+  <p><span class="label">Outcome:</span> Heated national debate over military ethics.</p>
+</div>
+
+<!-- ======= END of D–I block ======= -->
+ <!-- ======= PART J–M: Japan, Jordan, Kazakhstan, Kuwait, Kyrgyzstan, Laos, Lebanon, Malaysia, Maldives, Mongolia, Myanmar =======
+     Copy-paste this block exactly into your existing <div class="cases"> area
+     under the previous block. -->
+
+<!-- ===================== Japan ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Japan</h2>
+<div class="case">
+  <h2>Japan – Teigin Bank Massacre Case (1948)</h2>
+  <p><span class="label">Year:</span> 1948</p>
+  <p><span class="label">Victim:</span> 12 bank employees</p>
+  <p><span class="label">Issue:</span> Poisoning during a bank robbery.</p>
+  <p><span class="label">Resolution:</span> Wrongful conviction of Hirasawa Sadamichi; later doubts remained.</p>
+  <p><span class="label">Outcome:</span> Influential in debates over capital punishment and wrongful convictions.</p>
+</div>
+
+<div class="case">
+  <h2>Japan – Norio Nagayama Case (1968)</h2>
+  <p><span class="label">Year:</span> 1968</p>
+  <p><span class="label">Victim:</span> 4 individuals</p>
+  <p><span class="label">Issue:</span> Serial killings by a teenager.</p>
+  <p><span class="label">Resolution:</span> Long legal battle; eventually sentenced to death.</p>
+  <p><span class="label">Outcome:</span> Sparked national debate on juvenile crime.</p>
+</div>
+
+<div class="case">
+  <h2>Japan – Aum Shinrikyo Tokyo Subway Attack (1995)</h2>
+  <p><span class="label">Year:</span> 1995</p>
+  <p><span class="label">Victim:</span> 13 killed, thousands injured</p>
+  <p><span class="label">Issue:</span> Sarin gas attack by cult members.</p>
+  <p><span class="label">Resolution:</span> Cult leaders arrested and executed.</p>
+  <p><span class="label">Outcome:</span> Strengthened anti-terror laws.</p>
+</div>
+
+<div class="case">
+  <h2>Japan – Hikari City Murder Case (1999)</h2>
+  <p><span class="label">Year:</span> 1999</p>
+  <p><span class="label">Victim:</span> Woman and infant</p>
+  <p><span class="label">Issue:</span> Juvenile offender committed brutal killings.</p>
+  <p><span class="label">Resolution:</span> Sentenced to death despite being a minor.</p>
+  <p><span class="label">Outcome:</span> Debate over juvenile sentencing.</p>
+</div>
+
+<div class="case">
+  <h2>Japan – Yamaguchi-gumi Yakuza Trials (2000s)</h2>
+  <p><span class="label">Year:</span> 2000s</p>
+  <p><span class="label">Victim:</span> Public order</p>
+  <p><span class="label">Issue:</span> Organized crime prosecutions.</p>
+  <p><span class="label">Resolution:</span> Successful convictions of high-ranking Yakuza.</p>
+  <p><span class="label">Outcome:</span> Stronger anti-mafia regulations.</p>
+</div>
+
+<!-- ===================== Jordan ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Jordan</h2>
+<div class="case">
+  <h2>Jordan – Zarqa Massacre Case (1993)</h2>
+  <p><span class="label">Year:</span> 1993</p>
+  <p><span class="label">Victim:</span> Civilians in Zarqa</p>
+  <p><span class="label">Issue:</span> Violence during riots.</p>
+  <p><span class="label">Resolution:</span> Perpetrators tried and convicted.</p>
+  <p><span class="label">Outcome:</span> Highlighted challenges in policing unrest.</p>
+</div>
+
+<div class="case">
+  <h2>Jordan – Al-Qaeda Hotel Bombings (2005)</h2>
+  <p><span class="label">Year:</span> 2005</p>
+  <p><span class="label">Victim:</span> 60+ civilians</p>
+  <p><span class="label">Issue:</span> Terrorist suicide attacks on Amman hotels.</p>
+  <p><span class="label">Resolution:</span> Suspects prosecuted; one executed.</p>
+  <p><span class="label">Outcome:</span> Reinforced anti-terror framework.</p>
+</div>
+
+<div class="case">
+  <h2>Jordan – Faten al-Majali Honor Killing Case (2000s)</h2>
+  <p><span class="label">Year:</span> 2000s</p>
+  <p><span class="label">Victim:</span> Women victims of honor killings</p>
+  <p><span class="label">Issue:</span> Lenient sentences for perpetrators.</p>
+  <p><span class="label">Resolution:</span> Public protests led to legal reforms.</p>
+  <p><span class="label">Outcome:</span> Reduced judicial tolerance for honor crimes.</p>
+</div>
+
+<div class="case">
+  <h2>Jordan – Terror Financing Trial (2014)</h2>
+  <p><span class="label">Year:</span> 2014</p>
+  <p><span class="label">Victim:</span> National security</p>
+  <p><span class="label">Issue:</span> Funding extremist groups.</p>
+  <p><span class="label">Resolution:</span> Convictions under counterterrorism laws.</p>
+  <p><span class="label">Outcome:</span> Precedent for financial crimes linked to terrorism.</p>
+</div>
+
+<div class="case">
+  <h2>Jordan – Kasasbeh Murder Case (2015)</h2>
+  <p><span class="label">Year:</span> 2015</p>
+  <p><span class="label">Victim:</span> Pilot Muath al-Kasasbeh</p>
+  <p><span class="label">Issue:</span> ISIS burned captured Jordanian pilot alive.</p>
+  <p><span class="label">Resolution:</span> Militants executed after swift trial.</p>
+  <p><span class="label">Outcome:</span> Strong national unity against extremism.</p>
+</div>
+
+<!-- ===================== Kazakhstan ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Kazakhstan</h2>
+<div class="case">
+  <h2>Kazakhstan – Alma-Ata Shootings (2011)</h2>
+  <p><span class="label">Year:</span> 2011</p>
+  <p><span class="label">Victim:</span> Civilians in Zhanaozen protests</p>
+  <p><span class="label">Issue:</span> Police opened fire on protesters.</p>
+  <p><span class="label">Resolution:</span> Investigations, some prosecutions.</p>
+  <p><span class="label">Outcome:</span> Human rights concerns highlighted.</p>
+</div>
+
+<div class="case">
+  <h2>Kazakhstan – Rakhat Aliyev Case (2007–2015)</h2>
+  <p><span class="label">Year:</span> 2007–2015</p>
+  <p><span class="label">Victim:</span> Political opponents</p>
+  <p><span class="label">Issue:</span> Kidnapping and murder charges against former official.</p>
+  <p><span class="label">Resolution:</span> Tried in absentia; later died in custody abroad.</p>
+  <p><span class="label">Outcome:</span> Corruption and elite crime exposed.</p>
+</div>
+
+<div class="case">
+  <h2>Kazakhstan – Mukhtar Ablyazov Case (2013)</h2>
+  <p><span class="label">Year:</span> 2013</p>
+  <p><span class="label">Victim:</span> BTA Bank</p>
+  <p><span class="label">Issue:</span> Large-scale embezzlement.</p>
+  <p><span class="label">Resolution:</span> International litigation; extradition attempts.</p>
+  <p><span class="label">Outcome:</span> Landmark in financial crime enforcement.</p>
+</div>
+
+<div class="case">
+  <h2>Kazakhstan – Opposition Leader Murder (2006)</h2>
+  <p><span class="label">Year:</span> 2006</p>
+  <p><span class="label">Victim:</span> Altynbek Sarsenbayev</p>
+  <p><span class="label">Issue:</span> Political assassination.</p>
+  <p><span class="label">Resolution:</span> Convictions of security officers.</p>
+  <p><span class="label">Outcome:</span> Sparked demands for political reform.</p>
+</div>
+
+<div class="case">
+  <h2>Kazakhstan – 2016 Land Reform Protests Cases</h2>
+  <p><span class="label">Year:</span> 2016</p>
+  <p><span class="label">Victim:</span> Protesters</p>
+  <p><span class="label">Issue:</span> Arrests and trials of demonstrators.</p>
+  <p><span class="label">Resolution:</span> Convictions for inciting unrest.</p>
+  <p><span class="label">Outcome:</span> Debate on freedom of assembly.</p>
+</div>
+
+<!-- ===================== Kuwait ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Kuwait</h2>
+<div class="case">
+  <h2>Kuwait – Sabah al-Salem Hostage Case (1985)</h2>
+  <p><span class="label">Year:</span> 1985</p>
+  <p><span class="label">Victim:</span> Civilians</p>
+  <p><span class="label">Issue:</span> Hostage crisis linked to militants.</p>
+  <p><span class="label">Resolution:</span> Hostages released; suspects tried.</p>
+  <p><span class="label">Outcome:</span> Highlighted vulnerability to terrorism.</p>
+</div>
+
+<div class="case">
+  <h2>Kuwait – Iraqi Invasion War Crimes Trials (1991)</h2>
+  <p><span class="label">Year:</span> 1991</p>
+  <p><span class="label">Victim:</span> Civilians</p>
+  <p><span class="label">Issue:</span> Killings and looting during occupation.</p>
+  <p><span class="label">Resolution:</span> Trials and UN war-crimes inquiries.</p>
+  <p><span class="label">Outcome:</span> Compensation process for victims.</p>
+</div>
+
+<div class="case">
+  <h2>Kuwait – Bidun Citizenship Protests (2011)</h2>
+  <p><span class="label">Year:</span> 2011</p>
+  <p><span class="label">Victim:</span> Stateless community</p>
+  <p><span class="label">Issue:</span> Arrests during protests for rights.</p>
+  <p><span class="label">Resolution:</span> Convictions; international criticism.</p>
+  <p><span class="label">Outcome:</span> Ongoing debate on statelessness.</p>
+</div>
+
+<div class="case">
+  <h2>Kuwait – Parliament Storming Trial (2011)</h2>
+  <p><span class="label">Year:</span> 2011</p>
+  <p><span class="label">Victim:</span> National Assembly</p>
+  <p><span class="label">Issue:</span> Protesters stormed parliament building.</p>
+  <p><span class="label">Resolution:</span> Opposition leaders tried and sentenced.</p>
+  <p><span class="label">Outcome:</span> Set precedent for political protest limits.</p>
+</div>
+
+<div class="case">
+  <h2>Kuwait – Corruption Scandals (2010s)</h2>
+  <p><span class="label">Year:</span> 2010s</p>
+  <p><span class="label">Victim:</span> Public interest</p>
+  <p><span class="label">Issue:</span> Embezzlement and bribery cases.</p>
+  <p><span class="label">Resolution:</span> Trials and dismissals of officials.</p>
+  <p><span class="label">Outcome:</span> Strengthened oversight measures.</p>
+</div>
+
+<!-- (continues with Kyrgyzstan, Laos, Lebanon, Malaysia, Maldives, Mongolia, Myanmar) -->
+ <!-- ======= PART J–M continued: Kyrgyzstan, Laos, Lebanon, Malaysia, Maldives, Mongolia, Myanmar =======
+     Copy-paste this block into your existing <div class="cases"> below the previous block. -->
+
+<!-- ===================== Kyrgyzstan ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Kyrgyzstan</h2>
+<div class="case">
+  <h2>Kyrgyzstan – Aksy Protests Killings (2002)</h2>
+  <p><span class="label">Year:</span> 2002</p>
+  <p><span class="label">Victim:</span> Demonstrators</p>
+  <p><span class="label">Issue:</span> Police opened fire on protesters.</p>
+  <p><span class="label">Resolution:</span> Officials prosecuted for abuses.</p>
+  <p><span class="label">Outcome:</span> Marked turning point in democratic reform.</p>
+</div>
+
+<div class="case">
+  <h2>Kyrgyzstan – Tulip Revolution Trials (2005)</h2>
+  <p><span class="label">Year:</span> 2005</p>
+  <p><span class="label">Victim:</span> Protesters</p>
+  <p><span class="label">Issue:</span> Political violence during revolution.</p>
+  <p><span class="label">Resolution:</span> Trials against security forces.</p>
+  <p><span class="label">Outcome:</span> Political transition and accountability.</p>
+</div>
+
+<div class="case">
+  <h2>Kyrgyzstan – Bakiyev Corruption Case (2010)</h2>
+  <p><span class="label">Year:</span> 2010</p>
+  <p><span class="label">Victim:</span> National resources</p>
+  <p><span class="label">Issue:</span> Former president accused of embezzlement.</p>
+  <p><span class="label">Resolution:</span> Tried in absentia; sentenced.</p>
+  <p><span class="label">Outcome:</span> Exposed elite corruption.</p>
+</div>
+
+<div class="case">
+  <h2>Kyrgyzstan – Osh Ethnic Violence Trials (2010)</h2>
+  <p><span class="label">Year:</span> 2010</p>
+  <p><span class="label">Victim:</span> Uzbek minority</p>
+  <p><span class="label">Issue:</span> Violence between Kyrgyz and Uzbek communities.</p>
+  <p><span class="label">Resolution:</span> Hundreds tried, criticized as biased.</p>
+  <p><span class="label">Outcome:</span> Highlighted ethnic tensions in justice system.</p>
+</div>
+
+<div class="case">
+  <h2>Kyrgyzstan – Atambayev Prosecution (2019)</h2>
+  <p><span class="label">Year:</span> 2019</p>
+  <p><span class="label">Victim:</span> Law enforcement officers</p>
+  <p><span class="label">Issue:</span> Former president accused of corruption and clashes with police.</p>
+  <p><span class="label">Resolution:</span> Convicted and imprisoned.</p>
+  <p><span class="label">Outcome:</span> Showed state’s fight against elite impunity.</p>
+</div>
+
+<!-- ===================== Laos ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Laos</h2>
+<div class="case">
+  <h2>Laos – Sombath Somphone Disappearance (2012)</h2>
+  <p><span class="label">Year:</span> 2012</p>
+  <p><span class="label">Victim:</span> Activist Sombath Somphone</p>
+  <p><span class="label">Issue:</span> Enforced disappearance.</p>
+  <p><span class="label">Resolution:</span> No accountability; international concern.</p>
+  <p><span class="label">Outcome:</span> Focused attention on state repression.</p>
+</div>
+
+<div class="case">
+  <h2>Laos – Drug Trafficking Trials (2000s)</h2>
+  <p><span class="label">Year:</span> 2000s</p>
+  <p><span class="label">Victim:</span> Public health</p>
+  <p><span class="label">Issue:</span> Large heroin trafficking networks.</p>
+  <p><span class="label">Resolution:</span> Major prosecutions and executions.</p>
+  <p><span class="label">Outcome:</span> Strengthened anti-drug enforcement.</p>
+</div>
+
+<div class="case">
+  <h2>Laos – Illegal Logging Prosecutions (2016)</h2>
+  <p><span class="label">Year:</span> 2016</p>
+  <p><span class="label">Victim:</span> National resources</p>
+  <p><span class="label">Issue:</span> Corruption linked to illegal timber trade.</p>
+  <p><span class="label">Resolution:</span> Officials convicted.</p>
+  <p><span class="label">Outcome:</span> Boosted awareness of environmental crime.</p>
+</div>
+
+<div class="case">
+  <h2>Laos – Human Trafficking Case (2014)</h2>
+  <p><span class="label">Year:</span> 2014</p>
+  <p><span class="label">Victim:</span> Young women</p>
+  <p><span class="label">Issue:</span> Trafficking victims sold across borders.</p>
+  <p><span class="label">Resolution:</span> Convictions of traffickers.</p>
+  <p><span class="label">Outcome:</span> Strengthened anti-trafficking laws.</p>
+</div>
+
+<div class="case">
+  <h2>Laos – Xaisomboun Attacks Trials (2015)</h2>
+  <p><span class="label">Year:</span> 2015</p>
+  <p><span class="label">Victim:</span> Civilians and tourists</p>
+  <p><span class="label">Issue:</span> Armed group attacks in Xaisomboun.</p>
+  <p><span class="label">Resolution:</span> Suspects arrested and tried.</p>
+  <p><span class="label">Outcome:</span> Expanded state security powers.</p>
+</div>
+
+<!-- ===================== Lebanon ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Lebanon</h2>
+<div class="case">
+  <h2>Lebanon – Sabra and Shatila Massacre Inquiry (1982)</h2>
+  <p><span class="label">Year:</span> 1982</p>
+  <p><span class="label">Victim:</span> Palestinian civilians</p>
+  <p><span class="label">Issue:</span> Mass killings during civil war.</p>
+  <p><span class="label">Resolution:</span> International condemnation, local impunity.</p>
+  <p><span class="label">Outcome:</span> Landmark in war-crime accountability debates.</p>
+</div>
+
+<div class="case">
+  <h2>Lebanon – Rafic Hariri Assassination Case (2005)</h2>
+  <p><span class="label">Year:</span> 2005</p>
+  <p><span class="label">Victim:</span> Former Prime Minister Rafic Hariri</p>
+  <p><span class="label">Issue:</span> Car bomb assassination.</p>
+  <p><span class="label">Resolution:</span> UN-backed Special Tribunal prosecuted suspects.</p>
+  <p><span class="label">Outcome:</span> Landmark in internationalized criminal justice.</p>
+</div>
+
+<div class="case">
+  <h2>Lebanon – Michel Samaha Terror Case (2012)</h2>
+  <p><span class="label">Year:</span> 2012</p>
+  <p><span class="label">Victim:</span> Civilians</p>
+  <p><span class="label">Issue:</span> Politician caught transporting explosives.</p>
+  <p><span class="label">Resolution:</span> Convicted and sentenced.</p>
+  <p><span class="label">Outcome:</span> Signaled accountability for high-level figures.</p>
+</div>
+
+<div class="case">
+  <h2>Lebanon – Tripoli Bombings Trials (2013)</h2>
+  <p><span class="label">Year:</span> 2013</p>
+  <p><span class="label">Victim:</span> 47 civilians</p>
+  <p><span class="label">Issue:</span> Twin mosque bombings in Tripoli.</p>
+  <p><span class="label">Resolution:</span> Suspects convicted.</p>
+  <p><span class="label">Outcome:</span> Exposed sectarian tensions.</p>
+</div>
+
+<div class="case">
+  <h2>Lebanon – Beirut Port Explosion Negligence (2020)</h2>
+  <p><span class="label">Year:</span> 2020</p>
+  <p><span class="label">Victim:</span> 218+ killed, thousands injured</p>
+  <p><span class="label">Issue:</span> Negligent storage of ammonium nitrate.</p>
+  <p><span class="label">Resolution:</span> Ongoing trials against officials.</p>
+  <p><span class="label">Outcome:</span> Shaped debate on political impunity.</p>
+</div>
+
+<!-- (continues with Malaysia, Maldives, Mongolia, Myanmar) -->
+ <!-- ======= PART N–P: Nepal, North Korea, Oman, Pakistan, Palestine, Philippines =======
+     Copy-paste this block into your existing <div class="cases"> below the previous block. -->
+
+<!-- ===================== Nepal ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Nepal</h2>
+<div class="case">
+  <h2>Nepal – Royal Massacre Case (2001)</h2>
+  <p><span class="label">Year:</span> 2001</p>
+  <p><span class="label">Victim:</span> King Birendra and family</p>
+  <p><span class="label">Issue:</span> Crown Prince Dipendra allegedly killed royal family.</p>
+  <p><span class="label">Resolution:</span> Dipendra declared king, died after 3 days.</p>
+  <p><span class="label">Outcome:</span> End of monarchy’s credibility, rise of republic movement.</p>
+</div>
+
+<div class="case">
+  <h2>Nepal – Maina Sunuwar Custodial Killing (2004)</h2>
+  <p><span class="label">Year:</span> 2004</p>
+  <p><span class="label">Victim:</span> Maina Sunuwar (15-year-old girl)</p>
+  <p><span class="label">Issue:</span> Torture and killing by army officers.</p>
+  <p><span class="label">Resolution:</span> Officers convicted years later.</p>
+  <p><span class="label">Outcome:</span> Human rights accountability during civil war.</p>
+</div>
+
+<div class="case">
+  <h2>Nepal – Tikapur Massacre Case (2015)</h2>
+  <p><span class="label">Year:</span> 2015</p>
+  <p><span class="label">Victim:</span> Police officers and child</p>
+  <p><span class="label">Issue:</span> Violent clashes over constitution.</p>
+  <p><span class="label">Resolution:</span> Convictions of protest leaders.</p>
+  <p><span class="label">Outcome:</span> Highlighted ethnic tensions and justice issues.</p>
+</div>
+
+<div class="case">
+  <h2>Nepal – Nirmala Pant Rape and Murder (2018)</h2>
+  <p><span class="label">Year:</span> 2018</p>
+  <p><span class="label">Victim:</span> Nirmala Pant (13 years old)</p>
+  <p><span class="label">Issue:</span> Rape and murder mishandled by police.</p>
+  <p><span class="label">Resolution:</span> Still unsolved, mass protests erupted.</p>
+  <p><span class="label">Outcome:</span> Demands for stronger policing and accountability.</p>
+</div>
+
+<div class="case">
+  <h2>Nepal – Paras Shah Hit-and-Run (2000)</h2>
+  <p><span class="label">Year:</span> 2000</p>
+  <p><span class="label">Victim:</span> Musician Praveen Gurung</p>
+  <p><span class="label">Issue:</span> Prince Paras involved in fatal car crash.</p>
+  <p><span class="label">Resolution:</span> No prosecution due to royal immunity.</p>
+  <p><span class="label">Outcome:</span> Public anger over unequal justice.</p>
+</div>
+
+<!-- ===================== North Korea ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">North Korea</h2>
+<div class="case">
+  <h2>North Korea – Kang Chol-hwan Imprisonment Case (1977)</h2>
+  <p><span class="label">Year:</span> 1977</p>
+  <p><span class="label">Victim:</span> Kang family</p>
+  <p><span class="label">Issue:</span> Whole family imprisoned for alleged political disloyalty.</p>
+  <p><span class="label">Resolution:</span> Survived 10 years in Yodok camp.</p>
+  <p><span class="label">Outcome:</span> Exposed horrors of gulags internationally.</p>
+</div>
+
+<div class="case">
+  <h2>North Korea – Otto Warmbier Case (2016)</h2>
+  <p><span class="label">Year:</span> 2016</p>
+  <p><span class="label">Victim:</span> Otto Warmbier</p>
+  <p><span class="label">Issue:</span> US student arrested for alleged theft.</p>
+  <p><span class="label">Resolution:</span> Sentenced to 15 years, returned comatose, later died.</p>
+  <p><span class="label">Outcome:</span> Global outrage against regime.</p>
+</div>
+
+<div class="case">
+  <h2>North Korea – Jang Song-thaek Execution (2013)</h2>
+  <p><span class="label">Year:</span> 2013</p>
+  <p><span class="label">Victim:</span> Jang Song-thaek</p>
+  <p><span class="label">Issue:</span> Uncle of Kim Jong-un purged for treason.</p>
+  <p><span class="label">Resolution:</span> Executed after secret trial.</p>
+  <p><span class="label">Outcome:</span> Consolidation of Kim’s power.</p>
+</div>
+
+<div class="case">
+  <h2>North Korea – Hwang Jang-yop Defection (1997)</h2>
+  <p><span class="label">Year:</span> 1997</p>
+  <p><span class="label">Victim:</span> Political elite defector</p>
+  <p><span class="label">Issue:</span> Senior official defected to South Korea.</p>
+  <p><span class="label">Resolution:</span> NK labeled him traitor, tried in absentia.</p>
+  <p><span class="label">Outcome:</span> Exposed inner workings of regime.</p>
+</div>
+
+<div class="case">
+  <h2>North Korea – Public Execution of Farmers (1990s)</h2>
+  <p><span class="label">Year:</span> 1990s</p>
+  <p><span class="label">Victim:</span> Accused food thieves</p>
+  <p><span class="label">Issue:</span> Executions during famine.</p>
+  <p><span class="label">Resolution:</span> State trials led to public shootings.</p>
+  <p><span class="label">Outcome:</span> Created climate of fear.</p>
+</div>
+
+<!-- ===================== Oman ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Oman</h2>
+<div class="case">
+  <h2>Oman – Oman Coup Plot Trials (1994)</h2>
+  <p><span class="label">Year:</span> 1994</p>
+  <p><span class="label">Victim:</span> State security</p>
+  <p><span class="label">Issue:</span> Islamic extremists accused of plotting coup.</p>
+  <p><span class="label">Resolution:</span> Dozens arrested, long prison terms.</p>
+  <p><span class="label">Outcome:</span> Strengthened authoritarian control.</p>
+</div>
+
+<div class="case">
+  <h2>Oman – Human Rights Bloggers Case (2012)</h2>
+  <p><span class="label">Year:</span> 2012</p>
+  <p><span class="label">Victim:</span> Free expression</p>
+  <p><span class="label">Issue:</span> Bloggers arrested for criticizing government.</p>
+  <p><span class="label">Resolution:</span> Convicted under cybercrime law.</p>
+  <p><span class="label">Outcome:</span> Highlighted limits on dissent.</p>
+</div>
+
+<div class="case">
+  <h2>Oman – Sohar Protests Trials (2011)</h2>
+  <p><span class="label">Year:</span> 2011</p>
+  <p><span class="label">Victim:</span> Protesters</p>
+  <p><span class="label">Issue:</span> Arab Spring–inspired protests.</p>
+  <p><span class="label">Resolution:</span> Dozens jailed for rioting.</p>
+  <p><span class="label">Outcome:</span> Limited reforms but crackdown remained.</p>
+</div>
+
+<div class="case">
+  <h2>Oman – Teacher Molestation Case (2018)</h2>
+  <p><span class="label">Year:</span> 2018</p>
+  <p><span class="label">Victim:</span> Schoolgirls</p>
+  <p><span class="label">Issue:</span> Abuse by teacher in Muscat.</p>
+  <p><span class="label">Resolution:</span> Convicted, long jail sentence.</p>
+  <p><span class="label">Outcome:</span> Raised awareness of child protection.</p>
+</div>
+
+<div class="case">
+  <h2>Oman – Domestic Violence Law Case (2020)</h2>
+  <p><span class="label">Year:</span> 2020</p>
+  <p><span class="label">Victim:</span> Women facing abuse</p>
+  <p><span class="label">Issue:</span> High-profile domestic violence killings.</p>
+  <p><span class="label">Resolution:</span> Court rulings pushed for protective laws.</p>
+  <p><span class="label">Outcome:</span> Strengthened legal protection for women.</p>
+</div>
+
+<!-- ===================== Pakistan ===================== -->
+<h2 style="width:100%; margin-top:30px; font-size:1.4rem; color:#1f3b2e;">Pakistan</h2>
+<div class="case">
+  <h2>Pakistan – Zulfikar Ali Bhutto Trial (1979)</h2>
+  <p><span class="label">Year:</span> 1979</p>
+  <p><span class="label">Victim:</span> Nawab Mohammad Ahmed Khan</p>
+  <p><span class="label">Issue:</span> Former PM tried for murder conspiracy.</p>
+  <p><span class="label">Resolution:</span> Sentenced to death, executed.</p>
+  <p><span class="label">Outcome:</span> Seen as politically motivated verdict.</p>
+</div>
+
+<div class="case">
+  <h
