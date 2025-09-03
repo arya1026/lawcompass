@@ -45,3 +45,21 @@ if country in cases_db:
         st.write(f"- {case}")
 else:
     st.info("⚖️ Cases for this country will be added soon.")
+st.subheader("🔎 Search Landmark Cases")
+
+# Flatten cases_db into a single list
+all_cases = []
+for c_list in cases_db.values():
+    all_cases.extend(c_list)
+
+# Search input
+query = st.text_input("Enter case name")
+
+if query:
+    results = [case for case in all_cases if query.lower() in case.lower()]
+    if results:
+        st.success("✅ Search Results:")
+        for r in results:
+            st.write(f"- {r}")
+    else:
+        st.warning("❌ No matching cases found.")
